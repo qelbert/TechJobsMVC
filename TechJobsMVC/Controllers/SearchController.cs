@@ -16,6 +16,7 @@ namespace TechJobsMVC.Controllers
         public IActionResult Index()
         {
             ViewBag.columns = ListController.ColumnChoices;
+            ViewBag.selected = "all";
             return View();
         }
 
@@ -36,9 +37,9 @@ namespace TechJobsMVC.Controllers
             }
 
             ViewBag.jobs = jobs;
-            ViewBag.selection = searchType;
 
             ViewBag.columns = ListController.ColumnChoices;
+            ViewBag.selected = searchType;
             return View("Index");
         }
     }
